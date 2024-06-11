@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.dicoding.gymvision.R
 import com.dicoding.gymvision.databinding.ActivityMainBinding
+import com.dicoding.gymvision.view.fragment.BlankFragment
 import com.dicoding.gymvision.view.fragment.HomeFragment
 import com.dicoding.gymvision.view.viewmodel.MainViewModel
 import com.dicoding.gymvision.view.viewmodel.ViewModelFactory
@@ -17,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels { ViewModelFactory.getInstance(this) }
     private lateinit var binding: ActivityMainBinding
-    private lateinit var navview: BottomNavigationView
+    private lateinit var navView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +32,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        navview = findViewById(R.id.nav)
+        navView = findViewById(R.id.nav)
 
-        navview.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.navigation->replace(HomeFragment())
-                R.id.navigation->replace(HomeFragment())
-                R.id.navigation->replace(HomeFragment())
+        // Atur HomeFragment sebagai fragment awal
+        if (savedInstanceState == null) {
+            replaceFragment(HomeFragment())
+        }
+
+        navView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> replaceFragment(HomeFragment())
+                R.id.blank -> replaceFragment(BlankFragment())
             }
             true
         }
@@ -73,10 +78,10 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun replace(fragment: Fragment){
-        val fragmentManager=supportFragmentManager
-        val fragmentTransaction=fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.navhost,fragment)
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
         fragmentTransaction.commit()
     }
 }
