@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="FrameLayout">
+        <attr name="defaultBavHost" format="boolean" />
+    </declare-styleable>
+</resources>
