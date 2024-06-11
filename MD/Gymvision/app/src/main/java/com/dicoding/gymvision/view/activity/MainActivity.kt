@@ -1,10 +1,13 @@
 package com.dicoding.gymvision.view.activity
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowInsets
+import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.dicoding.gymvision.R
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         // Contoh penggunaan binding untuk menampilkan konten
         viewModel.retrieveUserSession().observe(this) { user ->
             if (!user.isLogin) {
@@ -32,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        navView = findViewById(R.id.nav)
+        navView = binding.nav
 
         // Atur HomeFragment sebagai fragment awal
         if (savedInstanceState == null) {
@@ -47,6 +51,8 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
