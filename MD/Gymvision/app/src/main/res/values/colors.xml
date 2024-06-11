@@ -10,4 +10,6 @@
     <color name="navy">#2D3D4F</color>
     <color name="blue">#0078FF</color>
     <color name="blue_background">#0A2647</color>
+    <color name="red">#FF0000</color>
+
 </resources>

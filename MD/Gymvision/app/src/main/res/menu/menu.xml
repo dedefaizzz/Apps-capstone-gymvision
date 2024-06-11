@@ -13,7 +13,14 @@
         android:visible="false" />
 
     <item
+        android:id="@+id/blank1"
+        android:title=""
+        android:icon="@android:color/transparent"
+        android:enabled="false"
+        android:visible="true" />
+
+    <item
         android:id="@+id/blank"
         android:title="@string/logout"
-        android:icon="@drawable/ic_logout" />
+        android:icon="@drawable/ic_place_holder" />
 </menu>
