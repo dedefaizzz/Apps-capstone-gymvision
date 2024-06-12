@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/color_gradient"
     tools:context=".view.activity.CameraActivity">
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
@@ -48,6 +49,7 @@
         android:text="@string/please_select_an_image_from_gallery"
         android:textStyle="italic"
         android:textSize="11sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +66,7 @@
         app:layout_constraintBottom_toTopOf="@+id/galleryButton">
 
         <TextView
+            android:textColor="@color/white"
             android:id="@+id/lblPrevNameImgViewTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -71,6 +74,7 @@
             android:text="@string/file_name" />
 
         <TextView
+            android:textColor="@color/white"
             android:id="@+id/valueFileNameTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -86,9 +90,23 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="@string/gallery"
+        android:backgroundTint="@color/figma_blue"
+        app:layout_constraintBottom_toTopOf="@+id/analyzeButton"
+        app:layout_constraintEnd_toStartOf="@id/cameraButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cameraButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/camera"
+        android:backgroundTint="@color/figma_blue"
         app:layout_constraintBottom_toTopOf="@+id/analyzeButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/galleryButton"/>
 
     <Button
         android:id="@+id/analyzeButton"
@@ -98,7 +116,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         android:text="@string/analyze"
-        android:backgroundTint="@android:color/holo_green_dark"
+        android:backgroundTint="@color/figma_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
