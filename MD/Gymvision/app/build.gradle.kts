@@ -104,4 +104,9 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-metadata:0.1.0")
     implementation("androidx.camera:camera-core:1.3.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    //imageslider
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.0")
+    implementation ("androidx.cardview:cardview:1.0.0")
+
 }

@@ -15,7 +15,7 @@
         <item name="android:windowEnterTransition">@android:transition/explode</item>
         <item name="android:windowExitTransition">@android:transition/explode</item>
 
-        <item name="colorSecondary">@color/red</item>
+        <item name="colorSecondary">@color/white</item>
         <item name="colorOnSecondary">@color/white</item>
 
     </style>
