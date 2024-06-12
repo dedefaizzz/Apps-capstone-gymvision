@@ -11,5 +11,7 @@
     <color name="blue">#0078FF</color>
     <color name="blue_background">#0A2647</color>
     <color name="red">#FF0000</color>
-
+    <color name="gradient1">#0A2647</color>
+    <color name="gradient2">#185DAD</color>
+    <color name="figma_blue">#2C74B3</color>
 </resources>
