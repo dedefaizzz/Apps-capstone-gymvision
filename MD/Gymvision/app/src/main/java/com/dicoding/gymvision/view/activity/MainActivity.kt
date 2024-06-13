@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.dicoding.gymvision.R
 import com.dicoding.gymvision.databinding.ActivityMainBinding
-import com.dicoding.gymvision.view.fragment.BlankFragment
+import com.dicoding.gymvision.view.fragment.SuplemenFragment
 import com.dicoding.gymvision.view.fragment.HomeFragment
 import com.dicoding.gymvision.view.viewmodel.MainViewModel
 import com.dicoding.gymvision.view.viewmodel.ViewModelFactory
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         navView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> replaceFragment(HomeFragment())
-                R.id.blank -> replaceFragment(BlankFragment())
+                R.id.blank -> replaceFragment(SuplemenFragment())
             }
             true
         }

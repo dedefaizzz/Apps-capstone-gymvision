@@ -37,4 +37,8 @@
     <string name="please_select_an_image_from_gallery">Please select an image from gallery</string>
     <string name="value_result">[value result]</string>
     <string name="result">Hasil Analisis</string>
+
+    <string name="nama_suplement">Suplement</string>
+    <string name="desc_suplement">Desckripsi</string>
+    <string name="product_image">Produk deskripsi</string>
 </resources>
