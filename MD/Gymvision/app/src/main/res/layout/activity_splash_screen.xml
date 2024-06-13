@@ -19,9 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/logo_gym_vision"
-        android:alpha="0"
-        tools:alpha="100"/>
+        android:src="@drawable/logo_gym_vision"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"
