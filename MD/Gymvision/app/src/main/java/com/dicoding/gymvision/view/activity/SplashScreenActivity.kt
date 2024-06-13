@@ -15,7 +15,7 @@ import com.dicoding.gymvision.databinding.ActivitySplashScreenBinding
 
 class SplashActivity : AppCompatActivity() {
 
-    private val SPLASH_TIME_OUT: Long = 2000
+    private val SPLASH_TIME_OUT: Long = 3000
     private lateinit var binding: ActivitySplashScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,7 +55,5 @@ class SplashActivity : AppCompatActivity() {
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
-
-        val logoGymVision = ObjectAnimator.ofFloat(binding.logoGymVision, View.ALPHA, 1f).setDuration(100)
     }
 }
