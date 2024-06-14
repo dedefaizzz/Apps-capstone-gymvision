@@ -3,17 +3,11 @@ package com.dicoding.gymvision.view.activity
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.dicoding.gymvision.databinding.ActivityResultBinding
 
 
 class ResultActivity : AppCompatActivity() {
-
-    companion object {
-        const val IMAGE_URI = "EXTRA_IMAGE_URI"
-        const val RESULT = "EXTRA_RESULT"
-        const val ACCURACY = "EXTRA_ACCURACY"
-    }
-
     private lateinit var binding: ActivityResultBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,16 +15,16 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // TODO (29): get data from sender intent
-        val imageUri = intent.getStringExtra(IMAGE_URI)
-        val result = intent.getStringExtra(RESULT)
-        val accuracy = intent.getFloatExtra(ACCURACY, 0f)
+        // Get data from intent
+        val resultText = intent.getStringExtra("RESULT_TEXT")
+        val message = intent.getStringExtra("MESSAGE")
 
-        // TODO (30): Menampilkan hasil gambar, prediksi, dan confidence score.
-        binding.resultImage.setImageURI(Uri.parse(imageUri))
-
-        binding.valueResultTv.text = "[$result] ${"%.2f".format(accuracy)}%"
+        // Display the result
+        binding.resultTextView.text = resultText
+        message?.let { showToast(it) }
     }
 
-
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
 }

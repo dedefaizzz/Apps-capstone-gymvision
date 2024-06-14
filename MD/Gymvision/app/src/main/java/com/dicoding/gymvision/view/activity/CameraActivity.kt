@@ -1,220 +1,159 @@
 package com.dicoding.gymvision.view.activity
 
-import android.app.Activity
 import android.content.Intent
-import android.net.Uri
+import android.os.Build
 import android.os.Bundle
-import android.provider.OpenableColumns
 import android.util.Log
-import android.view.View
+import android.view.OrientationEventListener
+import android.view.Surface
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.Toast
-import androidx.activity.result.PickVisualMediaRequest
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.dicoding.gymvision.data.helper.ImageClassifierHelper
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.Preview
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.core.content.ContextCompat
+import com.dicoding.gymvision.data.utils.createCustomTempFile
 import com.dicoding.gymvision.databinding.ActivityCameraBinding
-import com.yalantis.ucrop.UCrop
-import java.io.File
 
 // TODO (25): implement ClassifierListener buat dapatin onResults maupun onError
-class CameraActivity : AppCompatActivity(), ImageClassifierHelper.ClassifierListener {
-
-    companion object {
-        const val IMAGE_URI = "EXTRA_IMAGE_URI"
-        const val RESULT = "EXTRA_RESULT"
-        const val ACCURACY = "EXTRA_ACCURACY"
-
-        const val SELECTED_FILE_NAME = "EXTRA_SELECTED_FILE_NAME"
-    }
-
+class CameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCameraBinding
-
-    private var currentImageUri: Uri? = null
-    private var selectedFileName: String = ""
-
-    private var imageClassifierHelper: ImageClassifierHelper? = null
-    private var classificationLabel: String? = null
-    private var classificationAccuracy: Float? = null
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putParcelable(IMAGE_URI, currentImageUri)
-        outState.putString(SELECTED_FILE_NAME, selectedFileName)
-    }
+    private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+    private var imageCapture: ImageCapture? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.removeButton.setOnClickListener {
-            removeImage()
+        binding.switchCamera.setOnClickListener {
+            cameraSelector =
+                if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA) CameraSelector.DEFAULT_FRONT_CAMERA
+                else CameraSelector.DEFAULT_BACK_CAMERA
+            startCamera()
         }
-
-        // TODO (4): click button gallery, then call startGalery
-        binding.galleryButton.setOnClickListener {
-            startGallery()
-        }
-
-        binding.analyzeButton.setOnClickListener {
-            analyzeImage()
-        }
-
-        binding.analyzeButton.isEnabled = false
-        binding.removeButton.isEnabled = false
-
-        imageClassifierHelper = ImageClassifierHelper(
-            context = this@CameraActivity,
-            classifierListener = this@CameraActivity
-        )
-
-        // if device rotate
-        if (savedInstanceState != null) {
-            currentImageUri = savedInstanceState.getParcelable(IMAGE_URI)
-            binding.previewImageView.setImageURI(currentImageUri)
-
-            selectedFileName = savedInstanceState.getString(SELECTED_FILE_NAME, "")
-            binding.valueFileNameTV.text = selectedFileName
-
-            binding.analyzeButton.isEnabled = true
-            binding.removeButton.isEnabled = true
-            binding.infoInstructionTv.visibility = View.GONE
-        }
+        binding.captureImage.setOnClickListener { takePhoto() }
     }
 
-    // TODO (2): launcher to start photo picker and handle the result
-    private val launcherGallery = registerForActivityResult(
-        ActivityResultContracts.PickVisualMedia()
-    ) { uri: Uri? ->
-        if (uri != null) {
-            // TODO (6): handle selected image URI
-            currentImageUri = uri
-            showImage()
-        } else {
-            Log.d("Photo Picker", "No media selected")
-        }
+    public override fun onResume() {
+        super.onResume()
+        hideSystemUI()
+        startCamera()
     }
 
-    // TODO (3): Mendapatkan gambar dari Gallery.
-    private fun startGallery() {
-        launcherGallery.launch(PickVisualMediaRequest(
-            ActivityResultContracts.PickVisualMedia.ImageOnly
-        ))
+    private fun startCamera() {
+        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
+
+        cameraProviderFuture.addListener({
+            val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
+            val preview = Preview.Builder()
+                .build()
+                .also {
+                    it.setSurfaceProvider(binding.viewFinder.surfaceProvider)
+                }
+
+            imageCapture = ImageCapture.Builder().build()
+
+            try {
+                cameraProvider.unbindAll()
+                cameraProvider.bindToLifecycle(
+                    this,
+                    cameraSelector,
+                    preview,
+                    imageCapture
+                )
+
+            } catch (exc: Exception) {
+                Toast.makeText(
+                    this@CameraActivity,
+                    "Gagal memunculkan kamera.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                Log.e(TAG, "startCamera: ${exc.message}")
+            }
+        }, ContextCompat.getMainExecutor(this))
     }
 
-    private fun removeImage() {
-        // set preImgView to null (clear the ImageView)
-        binding.previewImageView.setImageURI(null)
+    private fun takePhoto() {
+        val imageCapture = imageCapture ?: return
 
-        // set uri to null (clear the uri)
-        currentImageUri = null
+        val photoFile = createCustomTempFile(application)
 
-        // disable again the analyze button
-        binding.analyzeButton.isEnabled = false
+        val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
 
-        // set selected file name displayed to empty (clear the displayed)
-        binding.valueFileNameTV.text = ""
+        imageCapture.takePicture(
+            outputOptions,
+            ContextCompat.getMainExecutor(this),
+            object : ImageCapture.OnImageSavedCallback {
+                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+                    val intent = Intent()
+                    intent.putExtra(EXTRA_CAMERAX_IMAGE, output.savedUri.toString())
+                    setResult(CAMERAX_RESULT, intent)
+                    finish()
+                }
 
-        // set btn to disable
-        binding.removeButton.isEnabled  = false
-        binding.infoInstructionTv.visibility = View.VISIBLE
-    }
-
-    // TODO (5): Menampilkan gambar sesuai Gallery yang dipilih.
-    private fun showImage() {
-        currentImageUri?.let { imgUri ->
-            Log.d("Image URI", "showImage: $imgUri")
-            binding.previewImageView.setImageURI(imgUri)
-
-            // extract file name from the uri
-            selectedFileName = getFileName(imgUri)
-            binding.valueFileNameTV.text = selectedFileName
-
-            // set enable analyze button
-            binding.analyzeButton.isEnabled = true
-            binding.removeButton.isEnabled = true
-
-            binding.infoInstructionTv.visibility = View.GONE
-
-            cropImage(imgUri)
-        }
-    }
-
-    private fun getFileName(imgUri: Uri): String {
-        var name = "unknown"
-        val cursor = contentResolver.query(imgUri, null, null, null, null)
-        cursor?.use { curCursor ->
-            if (curCursor.moveToFirst()) {
-                val nameIndex = curCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
-                if (nameIndex != -1) {
-                    name = curCursor.getString(nameIndex)
+                override fun onError(exc: ImageCaptureException) {
+                    Toast.makeText(
+                        this@CameraActivity,
+                        "Gagal mengambil gambar.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Log.e(TAG, "onError: ${exc.message}")
                 }
             }
-        }
-        return name
-    }
-
-    private fun cropImage(imgUri: Uri) {
-        val desUri = Uri.fromFile(
-            File(cacheDir, "cropped")
         )
-        UCrop.of(imgUri, desUri)
-            .start(this@CameraActivity)
     }
 
-    @Deprecated("Deprecated in Java")
-    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
-            val resultUri = UCrop.getOutput(data!!)
+    private fun hideSystemUI() {
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+        supportActionBar?.hide()
+    }
 
-            // update currentImageUri to cropped version
-            currentImageUri = resultUri
+    private val orientationEventListener by lazy {
+        object : OrientationEventListener(this) {
+            override fun onOrientationChanged(orientation: Int) {
+                if (orientation == ORIENTATION_UNKNOWN) {
+                    return
+                }
 
-            // display cropped image
-            binding.previewImageView.setImageURI(resultUri)
-        } else if (resultCode == UCrop.RESULT_ERROR) {
-            val cropError = UCrop.getError(data!!)
+                val rotation = when (orientation) {
+                    in 45 until 135 -> Surface.ROTATION_270
+                    in 135 until 225 -> Surface.ROTATION_180
+                    in 225 until 315 -> Surface.ROTATION_90
+                    else -> Surface.ROTATION_0
+                }
 
-            // error crop image
-            Toast.makeText(this@CameraActivity, "Crop image error: $cropError", Toast.LENGTH_LONG).show()
+                imageCapture?.targetRotation = rotation
+            }
         }
     }
 
-    // TODO (24): Menganalisa gambar yang berhasil ditampilkan.
-    private fun analyzeImage() {
-        currentImageUri?.let { imageUri ->
-            val (label, accuracy) = classifyImage(imageUri)
-            // TODO (28): passing data to result activity
-            moveToResult(imageUri, label, accuracy)
-        }?:showToast("Silahkan masukkan berkas gambar terlebih dahulu")
+    override fun onStart() {
+        super.onStart()
+        orientationEventListener.enable()
     }
 
-    private fun moveToResult(imageUri: Uri, result: String, accuracy: Float) {
-        val intent = Intent(this, ResultActivity::class.java)
-        intent.putExtra(IMAGE_URI, imageUri.toString())
-        intent.putExtra(RESULT, result)
-        intent.putExtra(ACCURACY, accuracy)
-        startActivity(intent)
+    override fun onStop() {
+        super.onStop()
+        orientationEventListener.disable()
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    // TODO (26): dapatin accuracy dari ImageClassifierHelper
-    private fun classifyImage(imageUri: Uri): Pair<String, Float> {
-        imageClassifierHelper?.classifyStaticImage(imageUri)
-        return Pair(classificationLabel ?: "Unknown", classificationAccuracy ?: 0f)
-    }
-
-    override fun onError(error: String) {
-
-    }
-
-    // TODO (27): assign result label, accuracy
-    override fun onResults(resultLabel: String, accuracy: Float) {
-        classificationAccuracy = accuracy
-        classificationLabel = resultLabel
+    companion object {
+        private const val TAG = "CameraActivity"
+        const val EXTRA_CAMERAX_IMAGE = "CameraX Image"
+        const val CAMERAX_RESULT = 200
     }
 }

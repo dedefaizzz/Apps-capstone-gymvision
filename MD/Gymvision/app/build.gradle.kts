@@ -54,6 +54,8 @@ android {
 
 dependencies {
 
+    val cameraxVersion = "1.3.0"
+
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.1")
     implementation("androidx.activity:activity-compose:1.9.0")
@@ -113,6 +115,12 @@ dependencies {
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
+
+    implementation("androidx.exifinterface:exifinterface:1.3.6")
+
+    implementation("androidx.camera:camera-camera2:$cameraxVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
+    implementation("androidx.camera:camera-view:$cameraxVersion")
 
 
 }

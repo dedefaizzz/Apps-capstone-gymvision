@@ -41,6 +41,7 @@
     <string name="nama_suplement">Suplement</string>
     <string name="desc_suplement">Desckripsi</string>
     <string name="product_image">Produk deskripsi</string>
+    <string name="camera_x">CameraX</string>
 
     <!-- String Edukasi -->
     <string-array name="data_name">

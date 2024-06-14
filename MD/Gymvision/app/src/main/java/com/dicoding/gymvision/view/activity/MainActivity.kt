@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         fabCamera.setOnClickListener {
-            val intent = Intent(this, CameraActivity::class.java)
+            val intent = Intent(this, AnalisActivity::class.java)
             startActivity(intent)
         }
     }
