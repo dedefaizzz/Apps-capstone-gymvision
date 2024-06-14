@@ -41,4 +41,64 @@
     <string name="nama_suplement">Suplement</string>
     <string name="desc_suplement">Desckripsi</string>
     <string name="product_image">Produk deskripsi</string>
+
+    <!-- String Edukasi -->
+    <string-array name="data_name">
+        <item>Bench Press</item>
+        <item>Treadmill</item>
+        <item>Lat Pulldown</item>
+        <item>Deadlift</item>
+        <item>Squat</item>
+    </string-array>
+    <string-array name="data_description">
+        <item>Sebagai pemula, lakukan langkah-langkah untuk gerakan dumbbell bench press secara bertahap. Bagi yang sudah berpengalaman, panduan ini mungkin bermanfaat untuk melakukan evaluasi terhadap gerakan latihan.
+
+        1. Pertama-tama, Anda harus menguasai gerakan standar terlebih dulu. Ambil posisi berbaring pada bangku tinggi dan mendatar dengan kaki menekuk dan memijak lantai.
+        2. Posisikan kedua tangan menyamping pada masing-masing sisi badan dan pegang tiang pengangkat bench press. Ketika melakukan posisi ini, siku Anda harus dibuat menekuk.
+        3. Sebelum mengangkat beban, kami anjurkan Anda pemanasan terlebih dulu menggunakan tiangnya (berat tiang bench press sekitar 20 kg).Secara perlahan-lahan, angkatlah tiang dan posiskan persis di depan dada, setelah menahan beberapa detik kembalikan lagi tiang pada rak penyangga.
+        4. Sudah cukup yakin ingin memulai gerakan bench press?  Mintalah instruktur yang menemani Anda menambahkan bebanPosisikan tangan pada tiang dengan telapak tangan menghadap depan. Kemudian angkat tiang ke atas melawan gravitasi dan turunkan sedikit demi sedikit dekat dengan dada.
+        5. Lakukan latihan bench press sebanyak 8-12 kali tiap setnya dengan jumlah set maksimal enam. Ketika Anda merasa tubuh sudah kelelahan, berhentilah sejenak untuk istirahat lantas lanjutkan latihan kembali saat sudah siap.
+        6. Waktu istirahat yang banyak direkomendasikan adalah 90-120 detik tiap set. Tapi mengingat setiap orang memiliki kemampuan yang berbeda-beda, Anda bisa mengambil istirahat lebih banyak lagi.
+        </item>
+        <item>Meski terlihat mudah, Anda harus tahu betul cara menggunakan treadmill untuk membantu memaksimalkan latihan. Nah, berikut panduannya.
+
+        1. Pelajari tombol pada treadmill. Alat treadmill biasanya dilengkapi dengan berbagai macam tombol untuk mengatur kecepatan dan jarak tempuh. Anda bisa menekan tombol start untuk memulai dan stop untuk berhenti. Selain itu, mesin treadmill modern biasanya telah dilengkapi dengan fitur-fitur yang mendukung performa latihan, seperti indikator jantung dan jumlah kalori yang terbakar.
+        2. Melakukan pemanasan Hal ini penting untuk membantu merilekskan otot dan sendi yang kaku serta menghindari risiko cedera.
+        3. Berdiri dengan posisi tubuh yang lurus dan pandangan ke depan. Lepaskan genggaman tangan Anda dari pegangan treadmill lalu ayunkan tangan seirama dengan langkah kaki Anda.
+        4. Mulai secara perlahan gunakan kecepatan yang paling rendah selama sekitar 5 – 10 menit untuk pemanasan. Setelah tubuh terbiasa, Anda boleh menambah kecepatannya secara perlahan.
+        5. Lari di treadmill dengan durasi 10 menit
+        </item>
+        <item>Pull down lateral adalah latihan gabungan yang melatih seluruh rantai posterior. Ini adalah latihan yang bagus untuk membangun kekuatan, stabilitas, dan mobilitas di sekitar bahu dan punggung. Berikut Teknik melakukan dengan benar
+
+        1. Tempatkan resistance band di bagian atas pintu dan pegang ujungnya di masing-masing tangan.
+        2. Tarik ke bawah pada resistance band, tarik tulang belikat Anda ke belakang dan ke bawah dan siku ke arah samping. Kendalikan gerakan kembali ke posisi awal.
+        3. Lakukan gerakan dengan 8 kali repetisi per set. Untuk merasakan otot yang berkontraksi di bagian punggung bagian atas
+        </item>
+        <item>Berikut adalah beberapa tahapan deadlift bagi Anda yang masih pemula:
+
+         1. Bagi pemula, disarankan untuk memulai dari beban terkecil dulu, baru kemudian ditingkatkan jika tubuh sudah beradaptasi dengan keadaan.
+         2. Aturlah posisi berdiri dengan tepat, yaitu tubuh lurus dan bagian kaki dibuka sampai selebar bahu.
+         3. Menggenggam bagian barbel harus disesuaikan dengan postur tubuh, yaitu harus lebih lebar dari posisi bahu dan kaki. Genggamlah dengan tangan menghadap ke bawah, dan lengan lurus seutuhnya.
+         4. Turunkan badan secara perlahan, dengan cara meluruskan paha seperti posisi akan duduk. Tahanlah keadaan itu, kemudian atur punggung tetap lurus dan pendangan menghadap kedepan. Posisi punggung harus rata dan perlahan melengkung, seiring dengan sudut pada dan lutut membentuk sudut siku-siku. Jika punggung Anda masih membungkuk, maka gerakan yang dilakukan masih belum tepat.
+         5. Jika posisi sudah dirasa nyaman, maka mulailah angkat tubuh dengan perlahan, dengan memperhatikan posisi panggul dan punggung yang tetap lurus. Jaga keseimbangan badan dengan menahan barbel selama beberapa waktu. Pada tahapan ini, rasakan dengan saksama penambahan beban yang dirasakan oleh tiap otot yang ada di tubuh.
+        </item>
+        <item>Melakukan gerakan dengan benar bisa menurunkan risiko cedera atau nyeri pada bagian punggung bawah. Gerakan squat yang benar juga tidak membuat lutut terbebani dan menjadi sakit. Berikut cara melakukan squat yang benar.
+
+        1. Mulai dengan berdiri tegak dan kaki dibuka selebar bahu
+        2. Pertahankan posisi dada ke arah depan dan otot core dikunci
+        3. Turunkan badan dengan mendorong bagian bokong ke arah bawah seperti akan duduk
+        4. Tetap jaga mata dan dada untuk terus menghadap ke depan
+        5. Cobalah untuk membuat paha sejajar dengan bokong atau bokong yang lebih rendah
+        6. Saat tubuh sedang turun, tangan bisa berada di depan dada atau lurus ke depan untuk menjaga keseimbangan
+        7. Angkat kembali tubuh kembali ke posisi semula
+        8. Ulangi gerakan di atas.
+        </item>
+    </string-array>
+    <string-array name="data_photo">
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Bench_press_1.jpg/1024px-Bench_press_1.jpg</item>
+        <item>https://res.cloudinary.com/peloton-cycle/image/fetch/f_auto,c_limit,w_384,q_90/https://images.ctfassets.net/6ilvqec50fal/6Z1S0kptdAhsAdO9d9LFiW/9dc792e687b7d6115f95f9978f80f5b6/01_Tread__07364__1_.jpg</item>
+        <item>https://static.strengthlevel.com/images/exercises/lat-pulldown/lat-pulldown-400.avif</item>
+        <item>https://www.evolvefitstudios.com/uploads/1/0/2/9/102951852/deadlifts_orig.jpeg</item>
+        <item>https://cdn-0.weighttraining.guide/wp-content/uploads/2016/10/barbell-squat-resized-FIXED-2.png?ezimgfmt=ng%3Awebp%2Fngcb4</item>
+    </string-array>
 </resources>

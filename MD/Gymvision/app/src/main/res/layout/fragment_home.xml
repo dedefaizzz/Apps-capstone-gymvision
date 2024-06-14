@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="436dp"
-        android:text="Recommended"
+        android:text="Education"
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/white"
