@@ -1,13 +1,12 @@
 package com.dicoding.gymvision.view.activity
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.gymvision.databinding.ActivityResultBinding
 
-
 class ResultActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityResultBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,16 +14,13 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Get data from intent
         val resultText = intent.getStringExtra("RESULT_TEXT")
-        val message = intent.getStringExtra("MESSAGE")
+        val imageUriString = intent.getStringExtra("IMAGE_URI")
+        val imageUri = imageUriString?.let { Uri.parse(it) }
 
-        // Display the result
         binding.resultTextView.text = resultText
-        message?.let { showToast(it) }
-    }
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        imageUri?.let {
+            binding.resultImageView.setImageURI(it)
+        }
     }
 }

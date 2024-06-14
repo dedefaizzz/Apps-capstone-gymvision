@@ -132,11 +132,12 @@ class AnalisActivity : AppCompatActivity() {
                     val apiService = ApiConfigML.getApiService()
                     val successResponse = apiService.uploadImage(multipartBody)
                     val resultText = with(successResponse) {
-                        String.format("Latihan: %s\nHasil: %s", latihan ?: "N/A", hasil ?: "N/A")
+                        String.format("  %s\n  %s", latihan ?: "N/A", hasil ?: "N/A")
                     }
-                    // Pass the result to ResultActivity
+                    // Pass the result and image URI to ResultActivity
                     val intent = Intent(this@AnalisActivity, ResultActivity::class.java).apply {
                         putExtra("RESULT_TEXT", resultText)
+                        putExtra("IMAGE_URI", uri.toString())
                     }
                     startActivity(intent)
                     showLoading(false)
@@ -149,6 +150,7 @@ class AnalisActivity : AppCompatActivity() {
             }
         } ?: showToast(getString(R.string.empty_image_warning))
     }
+
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressIndicator.visibility = if (isLoading) View.VISIBLE else View.GONE
