@@ -10,6 +10,8 @@
     <color name="navy">#2D3D4F</color>
     <color name="blue">#0078FF</color>
     <color name="blue_background">#0A2647</color>
+    <color name="blue_background2">#08458C</color>
+    <color name="blue_background3">#001732</color>
     <color name="red">#FF0000</color>
     <color name="gradient1">#0A2647</color>
     <color name="gradient2">#185DAD</color>

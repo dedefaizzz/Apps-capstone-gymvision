@@ -23,6 +23,7 @@ import com.dicoding.gymvision.data.utils.uriToFile
 import com.dicoding.gymvision.databinding.ActivityAnalisBinding
 import com.dicoding.gymvision.view.activity.CameraActivity.Companion.CAMERAX_RESULT
 import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
@@ -63,7 +64,7 @@ class AnalisActivity : AppCompatActivity() {
 
         binding.galleryButton.setOnClickListener { startGallery() }
         binding.cameraButton.setOnClickListener { startCamera() }
-        binding.cameraXButton.setOnClickListener { startCameraX() }
+//        binding.cameraXButton.setOnClickListener { startCameraX() }
         binding.uploadButton.setOnClickListener { uploadImage() }
     }
 
@@ -143,13 +144,23 @@ class AnalisActivity : AppCompatActivity() {
                     showLoading(false)
                 } catch (e: HttpException) {
                     val errorBody = e.response()?.errorBody()?.string()
-                    val errorResponse = Gson().fromJson(errorBody, GymResponse::class.java)
-                    showToast(errorResponse.hasil.toString())
+                    errorBody?.let {
+                        try {
+                            val errorResponse = Gson().fromJson(it, GymResponse::class.java)
+                            showToast(errorResponse.hasil.toString())
+                        } catch (jsonException: JsonSyntaxException) {
+                            showToast("Unexpected response format")
+                        }
+                    } ?: showToast("Unknown error occurred")
+                    showLoading(false)
+                } catch (e: Exception) {
+                    showToast("Failed to upload image: ${e.localizedMessage}")
                     showLoading(false)
                 }
             }
         } ?: showToast(getString(R.string.empty_image_warning))
     }
+
 
 
     private fun showLoading(isLoading: Boolean) {

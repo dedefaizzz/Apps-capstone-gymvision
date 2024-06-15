@@ -28,7 +28,15 @@ class ProductAdapter(private val productList: List<Product>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val product = productList[position]
         holder.productName.text = product.name
-        holder.productDescription.text = product.description
+
+        // Display only a shortened version of the description
+        val shortDescription = if (product.description.length > 100) {
+            "${product.description.substring(0, 100)}..."
+        } else {
+            product.description
+        }
+        holder.productDescription.text = shortDescription
+
         Glide.with(holder.itemView.context)
             .load(product.imageUrl)
             .placeholder(R.drawable.ic_place_holder) // Placeholder image
@@ -48,4 +56,3 @@ class ProductAdapter(private val productList: List<Product>) : RecyclerView.Adap
 
     override fun getItemCount() = productList.size
 }
-

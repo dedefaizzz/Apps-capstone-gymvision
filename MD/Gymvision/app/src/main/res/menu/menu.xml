@@ -21,6 +21,6 @@
 
     <item
         android:id="@+id/blank"
-        android:title="@string/logout"
-        android:icon="@drawable/ic_place_holder" />
+        android:title="@string/recommended"
+        android:icon="@drawable/baseline_recommend_24" />
 </menu>

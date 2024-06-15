@@ -122,5 +122,7 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
     implementation("androidx.camera:camera-view:$cameraxVersion")
 
+    implementation ("androidx.palette:palette:1.0.0")
+
 
 }

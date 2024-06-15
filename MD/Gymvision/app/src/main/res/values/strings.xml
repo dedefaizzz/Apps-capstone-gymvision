@@ -15,7 +15,7 @@
     <string name="logout">Keluar</string>
     <string name="camera">Kamera</string>
     <string name="gallery">Galeri</string>
-    <string name="upload">Unggah</string>
+    <string name="upload">Analisis</string>
     <string name="home">Home</string>
     <string name="deskription">Tulis cerita kamu di sini</string>
     <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
@@ -43,6 +43,7 @@
     <string name="product_image">Produk deskripsi</string>
     <string name="camera_x">CameraX</string>
     <string name="result_image">Hasil Gambar</string>
+    <string name="recommended">Rekomendasi</string>
 
     <!-- String Edukasi -->
     <string-array name="data_name">
@@ -102,5 +103,122 @@
         <item>https://static.strengthlevel.com/images/exercises/lat-pulldown/lat-pulldown-400.avif</item>
         <item>https://www.evolvefitstudios.com/uploads/1/0/2/9/102951852/deadlifts_orig.jpeg</item>
         <item>https://cdn-0.weighttraining.guide/wp-content/uploads/2016/10/barbell-squat-resized-FIXED-2.png?ezimgfmt=ng%3Awebp%2Fngcb4</item>
+    </string-array>
+
+    <!-- Add product names -->
+    <string-array name="product_names">
+        <item>L-Men Gain Mass</item>
+        <item>Optimum Nutrition Serious Mass</item>
+        <item>Evolene Evomass</item>
+        <item>ANS Creatine Monohydrate</item>
+        <item>Muscle First Pro Gold Creatine</item>
+        <item>Optimum Nutrition Creatine Powder</item>
+        <item>Mutant Creakong </item>
+        <item>XTEND BCAA</item>
+        <item>RSP True Gain</item>
+        <item>BPI Sports Best BCAA</item>
+        <!-- Tambahkan produk lainnya -->
+    </string-array>
+
+    <!-- Add product descriptions -->
+    <string-array name="product_descriptions">
+        <item>
+            L-Men Gain Mass adalah suplemen penambah berat badan yang efektif untuk meningkatkan massa otot hingga 1 kilogram dalam seminggu (telah teruji secara klinis).
+            Selain itu, suplemen rendah lemak dan bebas gula ini juga mengandung BCAA dan L-Glutamine yang berfungsi menaikkan daya tahan otot agar tidak diurai setelah berolahraga dan meningkatkan produksi hormon pertumbuhan.
+            L-Men Gain Mass diformulasikan secara khusus untuk peningkatan massa otot dan bukan massa lemak tubuh.\n\n
+            Cara Konsumsi:\n
+            Untuk hasil maksimal, minum 2 gelas L-Men Gain Mass setiap hari sebagai pengganti makan pagi dan malam.</item>
+        <item>
+            Formula penambah berat badan yang dirancang khusus bagi atlet yang ingin mendapatkan penampilan fisik yang lebih serius, membantu membentuk otot, dan penambahan berat badan.
+            Dalam setiap penyajiannya terkandung 1250 kalori yang berasal dari karbohidrat kompleks, Whey Protein, Casein, Egg albumen, Creatine Monohydrate, dan Glutamine.\n\n
+            Cara Konsumsi:\n
+            - Campurkan 2 scoop Serious Mass ke dalam blender berisi 3 gelas air dingin atau susu.\n
+            - Blender dengan kecepatan tinggi selama kurang lebih 45 – 60 detik atau hingga semua bahan tercampur dengan baik.\n
+            - Anda juga bisa menambahkan buah-buahan, selai kacang, dan makanan berkalori lainnya.\n
+            - Untuk pengguna baru, disarankan untuk memulai dengan porsi setengah sendok. Gunakan pasca-latihan dan/atau di antara waktu makan untuk menambahkan kalori, karbohidrat, dan protein ke dalam diet sehat dan seimbang Anda.
+        </item>
+        <item>
+            Evomass adalah susu tinggi protein, karbohidrat, dan kalori dari Evolene. Diformulasikan untuk Anda yang ingin menambah massa otot dan menaikkan berat badan tanpa bikin perut buncit .
+            Susu rendah lemak ini juga membantu mempercepat pemulihan otot dan pembentukan otot.
+            Evomass juga sudah lulus GMP (Good Manufacturing product) sehingga kandungannya dipastikan sudah sesuai dengan kandungan pada label kemasan.\n\n
+            Cara Konsumsi :\n
+            - Campurkan 6 scoops per 500 ml air suplemen Evomass Gainer Evolene.\n
+            - Sebaiknya dibagi menjadi 2-3 kali minum (2 scoop per sekali minum 3 kali sehari, atau 3 scoop per sekali minum 2 kali sehari)\n
+        </item>
+        <item>
+            ANS Creatine Monohydrate adalah produk creatine dari ANS yang telah diuji secara klinis.
+            Creatine monohydrate sendiri merupakan kebutuhan bagi setiap orang sebagai asupan bagi otot yang cedera pasca latihan sehingga dapat mempercepat pemulihannya.
+            Creatine juga memberikan phosphocreatine yang bekerja sebagai molekul penyimpan energi selama berolahraga.\N
+            Oleh karena itu, ketika otot kita kehabisan creatine, sistem energi akan melemah dan otot kita tidak bisa lagi bekerja secara optimal.\n
+            Suplemen ini berfungsi untuk meningkatkan tenaga, daya tahan otot, dan stamina sehingga membuat latihan Anda lebih efektif dan tahan lama. Otot Anda juga akan terbentuk bebas dari lemak.\n\n
+            Cara Konsumsi:\N
+            - Creatine Loading: 1 sendok (5gr) Creatine saat sarapan, makan siang, dan malam, serta 1 sendok tambahan sebelum tidur selama 4-5 hari untuk membantu mengisi otot Anda dengan creatine.\n
+            - Creatine Maintenance: 1 sendok (5gr) Creatine saat makan atau segera setelah latihan dengan protein shake pasca latihan Anda.\n
+            - Tips: Minumlah setidaknya delapan gelas air setiap hari saat mengonsumsi creatine. Mengkonsumsi karbohidrat sederhana dengan creatine dapat membantu meningkatkan efektivitas secara keseluruhan.\n
+        </item>
+        <item>
+            M1 Gold Pro Creatine merupakan suplemen yang diformulasikan untuk menambah dan menebalkan massa otot dalam tubuh.\n
+            Produk ini telah diolah secara halal, lulus uji Badan Pengawas Obat dan Makanan (BPOM), dan mendapatkan sertifikasi GMP.\n
+            Suplemen ini juga cocok untuk Anda yang ingin mendefinisi otot lebih sempurna, serta menambah tenaga dan durabilitas saat beraktivitas.\n\n
+            Cara Konsumsi:\n
+            - Jika sedang berolahraga: 5gr sebelum dan 5gr sesudah olahraga dicampur air dingin 100-150 ml\n
+            - Jika sedang tidak berolahraga: 10g di pagi hari setelah sarapan dicampur air dingin 100-150 ml\n
+        </item>
+        <item>
+            Optimum Nutrition Creatine Powder adalah suplemen yang membantu meningkatkan kekuatan dan massa otot, ketahanan tubuh dalam latihan yang intens, dan memperbaiki kerusakan dan peradangan sel otot akibat latihan.\n
+            Suplemen ini menggunakan metode pengolahan khusus sehingga Optimum Nutrition Creatine Powder tidak berbau dan tidak memiliki rasa tertentu.\n\n
+            Cara Konsumsi : \n
+            - Tambahkan 1 sendok teh Creatine Powder ke dalam segelas (240-360 ml) air dingin atau jus buah. Aduk dengan sendok.\n
+            - Creatine Loading: Ambil 1 sendok teh Bubuk Creatine Micronized dengan makan pagi, siang, dan malam dan 1 sendok teh tambahan sebelum tidur selama 4-5 hari untuk membantu memenuhi otot Anda dengan creatine.\n
+            - Creatine Maintenance:: Ambil 1 sendok teh Bubuk Creatine Micronized dengan makanan atau segera setelah latihan dengan protein shake pasca latihan Anda.\n
+            - Tips: Minumlah setidaknya 8 gelas air setiap hari saat mengonsumsi creatine. Mengkonsumsi karbohidrat sederhana dengan creatine dapat membantu meningkatkan efektivitas secara keseluruhan.\n
+        </item>
+        <item>
+            Creakong merupakan formula pengembangan creatine dari Mutant. Di mana dia menggabungkan 3 jenis creatine yang telah teruji secara klinis memberikan manfaat optimal dalam meningkatkan kekuatan dan ukuran massa otot tanpa penambahan bahan-bahan yang berbahaya bagi tubuh.\n
+            Suplemen ini juga membantu meningkatkan kecepatan kontraksi otot dan sintesis protein, serta meningkatkan daya tahan dan kekuatan sewaktu latihan.\n\n
+            Cara Konsumsi :\n
+            - Ambil satu sendok penuh (4gr) suplemen dan campurkan 230-320 ml air dingin,  20-30 menit sebelum latihan.
+        </item>
+        <item>
+            Suplemen penambah massa otot ini mengandung 7 gram branched-chain amino acids (BCAA) yang telah terbukti secara klinis mendukung pemulihan dan pertumbuhan otot.\n
+            XTEND juga mengandung elektrolit yang menghidrasi dan bahan kinerja tambahan untuk membantu Anda mengisi tenaga, memperbaiki, dan memulihkan diri.\n
+            Scivation XTEND memiliki formulasi yang cocok untuk memaksimalkan latihan dan meningkatkan sintesis protein otot yang optimal.\n
+            Suplemen pembentuk otot ini juga dilengkapi glutamin, yang berfungsi untuk meningkatkan daya tahan tubuh dan meningkatkan hormon pertumbuhan, serta dan citrulline, yang  berfungsi untuk menghilangkan racun dalam hati.\n\n
+            Cara Konsumsi : \n
+            - Sebagai suplemen makanan, campur setiap sendok dalam 300-420 ml air dan kocok rata.\n
+            - Pada hari pelatihan, konsumsi 1 sendok saat berolahraga dan 1 sendok setelah berolahraga.\n
+            - Pada harinon-pelatihan, konsumsilah 2 sendok sepanjang hari. \n
+            - Untuk hasil terbaik, gunakan dua sendok per hari.\n
+        </item>
+        <item>
+            RSP True Gain adalah suplemen dengan bahan utama Whey Isolate yang membantu dalam pembangunan dan penambahan massa otot. Suplemen ini juga berguna untuk mengoptimalkan pemulihan pelatihan.\n
+            RSP True Gain ini tinggi akan glutamine dan dibuat tanpa Amino Spiking, pemanis buatan, dan bahan kimia tambahan lainnya.\n\n
+            Cara Konsumsi : \n
+            - Campurkan 2 scoop RSP True Gain ke dalam 475-600 ml air putih, konsumsi di siang dan setelah latihan\n
+            - Konsumsi 1-2 kali sehari untuk kebutuhan protein sehari-hari.\n
+            - Konsumsi sebagai pengganti makan atau post-workout secukupnya, sesuai dengan kebutuhan masing-masing.
+        </item>
+        <item>
+            BPI Sports Best BCAA terdiri atas branched-chain amino acids (BCAA) dan asam linoleat terkonjugasi (CLA) untuk mendukung pertumbuhan otot, metabolisme, mencegah penyimpanan lemak, kinerja atletik, dan pemulihan pasca-latihan.\n
+            BCAA terdiri atas leusin, isoleusin dan valin yang memainkan peran penting dalam pertumbuhan otot dengan merangsang sintesis protein dan mencegah katabolisme protein.\n\n
+            Cara Konsumsi:\n
+            - 1 scoop waktu latihan dengan air 300-400 ml dan 1 scoop setelah latihan.
+        </item>
+        <!-- Tambahkan deskripsi produk lainnya -->
+    </string-array>
+
+    <!-- Add product image URLs -->
+    <string-array name="product_image_urls">
+        <item>https://storage.googleapis.com/rxstorage/Product/large/Apotek_Online_Farmaku_com_L-Men_Gain_Mass_Chocolate_225_g_1.jpg</item>
+        <item>https://www.dietspotlight.com/wp-content/uploads/seriousmass-image.jpg</item>
+        <item>https://thefitzone.co.id/wp-content/uploads/2022/07/Evolene-EvoMass-Gainer-5-Lbs-2.350-Gram-Weight-Gainer-Evolene-BPOM-Chocolate.png</item>
+        <item>https://cf.shopee.co.id/file/29c342c6725a11a26545ca1da4e8b9ef_tn</item>
+        <item>https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/106/MTA-86165791/brd-44261_muscle-first-pro-gold-creatine-tropical-fruit-menambah-massa-otot-creatin-suplemen-gym_full01.jpg</item>
+        <item>https://s3.images-iherb.com/opn/opn02385/l/21.jpg</item>
+        <item>https://suplementosolimpicos.com/wp-content/uploads/2022/05/Diseno-sin-titulo-9.png</item>
+        <item>https://i5.walmartimages.com/asr/8a4d3560-a8cd-48cc-b352-cd04e662c431_1.c0297709fe02f5b5b56520618246dba5.png</item>
+        <item>https://5.imimg.com/data5/PL/MX/MY-4137137/rsp-true-gain-protein-2-72-kg-1000x1000.jpg</item>
+        <item>https://cdn.hsnstore.com/media/catalog/product/b/e/best-bcaa-300g-bpisports_1.jpg</item>
+        <!-- Tambahkan URL gambar produk lainnya -->
     </string-array>
 </resources>

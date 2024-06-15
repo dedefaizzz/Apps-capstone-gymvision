@@ -1,0 +1,8 @@
+<resources>
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/rounded_button_blue</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+</resources>

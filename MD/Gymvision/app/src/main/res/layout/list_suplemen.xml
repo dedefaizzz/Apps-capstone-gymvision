@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     card_view:cardCornerRadius="8dp"
-    card_view:cardElevation="4dp">
+    card_view:cardElevation="4dp"
+    card_view:cardBackgroundColor="@color/figma_blue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,14 +14,21 @@
         android:orientation="horizontal"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/imageViewProduct"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_place_holder"
-            android:contentDescription="@string/product_image"
-            android:layout_marginEnd="16dp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="4dp"
+            android:layout_marginEnd="16dp">
+
+            <ImageView
+                android:id="@+id/imageViewProduct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_place_holder"
+                android:contentDescription="@string/product_image"/>
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -32,19 +40,19 @@
                 android:id="@+id/tvProductName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="bold"
                 android:text="Produk"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvProductDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:layout_marginTop="10dp"
                 android:text="Deskripsi"
-                android:textColor="@android:color/darker_gray"
-                android:layout_marginTop="4dp"/>
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 

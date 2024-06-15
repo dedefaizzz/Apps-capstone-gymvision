@@ -26,14 +26,25 @@ class SuplemenFragment : Fragment() {
 
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_suplemen)
 
-        val productList = listOf(
-            Product(name = "Product 1", description = "Description for Product 1", imageUrl = "https://example.com/image1.jpg"),
-            Product(name = "Product 2", description = "Description for Product 2", imageUrl = "https://example.com/image2.jpg"),
-            // Tambahkan produk lainnya
-        )
+        val productNames = resources.getStringArray(R.array.product_names)
+        val productDescriptions = resources.getStringArray(R.array.product_descriptions)
+        val productImageUrls = resources.getStringArray(R.array.product_image_urls)
+
+        val productList = mutableListOf<Product>()
+        for (i in productNames.indices) {
+            productList.add(
+                Product(
+                    name = productNames[i],
+                    description = productDescriptions[i],
+                    imageUrl = productImageUrls[i]
+                )
+            )
+        }
 
         val adapter = ProductAdapter(productList)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
+
+
     }
 }

@@ -1,22 +1,22 @@
 <resources>
-    <style
-        name="Theme.Capstone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!--status bar color-->
-        <item name="colorPrimary">@color/navy</item>
-        <!--proggres bar-->
+    <style name="Theme.Capstone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary color settings -->
+        <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/black</item>
-        <!--status bar color-->
-        <item name="android:statusBarColor">@color/blue</item>
-        <!--icon add dan fab-->
+
+        <!-- Set status bar color to transparent initially -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Secondary color settings -->
         <item name="colorSecondary">@color/white</item>
         <item name="colorOnSecondary">@color/white</item>
-        <!--transition-->
+
+        <!-- Enable activity transitions -->
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowEnterTransition">@android:transition/explode</item>
         <item name="android:windowExitTransition">@android:transition/explode</item>
 
-        <item name="colorSecondary">@color/white</item>
-        <item name="colorOnSecondary">@color/white</item>
-
+        <!-- Light status bar icons -->
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>
