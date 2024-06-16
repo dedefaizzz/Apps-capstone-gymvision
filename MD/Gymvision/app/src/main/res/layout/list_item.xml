@@ -24,16 +24,21 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/iv_priview"
+                android:id="@+id/iv_preview"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
                 android:transitionName="profile"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_place_holder"
                 android:importantForAccessibility="no" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/top_gradient" />
 
             <TextView
                 android:id="@+id/usernameTextView"
@@ -44,12 +49,12 @@
                 android:paddingBottom="8dp"
                 android:text="@string/tittle"
                 android:transitionName="name"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cd_imageView"/>
+                app:layout_constraintTop_toBottomOf="@+id/cd_imageView" />
 
         </androidx.cardview.widget.CardView>
 

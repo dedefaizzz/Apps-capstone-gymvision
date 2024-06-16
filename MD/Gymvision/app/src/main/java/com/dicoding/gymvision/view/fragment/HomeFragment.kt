@@ -7,14 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.dicoding.gymvision.R
+import com.dicoding.gymvision.adapter.EducationAdapter
+import com.dicoding.gymvision.adapter.ProductAdapter
+import com.dicoding.gymvision.data.model.Education
+import com.dicoding.gymvision.data.model.Product
+import com.dicoding.gymvision.view.activity.DetailEducationActivity
 import com.dicoding.gymvision.view.activity.WelcomeActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeFragment : Fragment() {
+
+    private lateinit var educationAdapter: EducationAdapter
+    private val listEducation = ArrayList<Education>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +49,29 @@ class HomeFragment : Fragment() {
 
         imageSlider.setImageList(imageList,ScaleTypes.FIT)
 
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewEducation)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        educationAdapter = EducationAdapter(listEducation)
+        recyclerView.adapter = educationAdapter
+
+        val adapter = EducationAdapter(listEducation)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
+
+        populateEducationData()
+
         return view
+    }
+
+    private fun populateEducationData() {
+        val dataName = resources.getStringArray(R.array.data_name)
+        val dataDescription = resources.getStringArray(R.array.data_description)
+        val dataPhoto = resources.getStringArray(R.array.data_photo)
+        for (i in dataName.indices) {
+            val edu = Education(dataName[i], dataDescription[i], dataPhoto[i])
+            listEducation.add(edu)
+        }
+        educationAdapter.notifyDataSetChanged()
     }
 
     override fun onResume() {
