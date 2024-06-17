@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_background"
+    android:background="@color/blue_background3"
     tools:context=".view.activity.DetailSuplemenActivity">
 
     <!-- CardView with rounded bottom corners -->
@@ -36,7 +36,6 @@
                 android:id="@+id/imageViewProductDetail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="25dp"
                 android:background="@drawable/rounded_cardview"
                 android:padding="0dp"
                 android:scaleType="centerCrop"

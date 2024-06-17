@@ -24,11 +24,13 @@ import com.dicoding.gymvision.databinding.ActivityAnalisBinding
 import com.dicoding.gymvision.view.activity.CameraActivity.Companion.CAMERAX_RESULT
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
+import com.yalantis.ucrop.UCrop
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.HttpException
+import java.io.File
 
 class AnalisActivity : AppCompatActivity() {
 
@@ -60,6 +62,10 @@ class AnalisActivity : AppCompatActivity() {
 
         if (!allPermissionsGranted()) {
             requestPermissionLauncher.launch(REQUIRED_PERMISSION)
+        }
+
+        binding.backButton.setOnClickListener {
+            finish() // Close the current activity and return to the previous one
         }
 
         binding.galleryButton.setOnClickListener { startGallery() }
@@ -111,9 +117,13 @@ class AnalisActivity : AppCompatActivity() {
     }
 
     private fun showImage() {
-        currentImageUri?.let {
-            Log.d("Image URI", "showImage: $it")
-            binding.previewImageView.setImageURI(it)
+        currentImageUri?.let { imgUri->
+            Log.d("Image URI", "showImage: $imgUri")
+            binding.previewImageView.setImageURI(imgUri)
+
+            binding.uploadButton.isEnabled = true
+
+            cropImage(imgUri)
         }
     }
 
@@ -149,7 +159,7 @@ class AnalisActivity : AppCompatActivity() {
                             val errorResponse = Gson().fromJson(it, GymResponse::class.java)
                             showToast(errorResponse.hasil.toString())
                         } catch (jsonException: JsonSyntaxException) {
-                            showToast("Unexpected response format")
+                            showToast("Maaf Server Sedang Sibuk")
                         }
                     } ?: showToast("Unknown error occurred")
                     showLoading(false)
@@ -161,7 +171,33 @@ class AnalisActivity : AppCompatActivity() {
         } ?: showToast(getString(R.string.empty_image_warning))
     }
 
+    private fun cropImage(imgUri: Uri) {
+        val desUri = Uri.fromFile(
+            File(cacheDir, "cropped")
+        )
+        UCrop.of(imgUri, desUri)
+            .start(this@AnalisActivity)
+    }
 
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK) {
+            when (requestCode) {
+                UCrop.REQUEST_CROP -> {
+                    val resultUri = UCrop.getOutput(data!!)
+                    resultUri?.let {
+                        currentImageUri = it
+                        binding.previewImageView.setImageURI(it)
+                    }
+                }
+                UCrop.RESULT_ERROR -> {
+                    val cropError = UCrop.getError(data!!)
+                    showToast(cropError?.message ?: "Crop error")
+                }
+            }
+        }
+    }
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressIndicator.visibility = if (isLoading) View.VISIBLE else View.GONE

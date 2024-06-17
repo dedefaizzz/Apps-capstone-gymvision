@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/blue_background3"
     tools:context=".view.fragment.HomeFragment">
 
@@ -12,10 +13,9 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_margin="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:layout_marginBottom="26dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="20dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"

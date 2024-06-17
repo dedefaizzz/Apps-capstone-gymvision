@@ -33,7 +33,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="73dp"
         android:layout_marginEnd="32dp"
         android:text="@string/title_signup_page"
         android:textColor="@color/white"
@@ -57,7 +57,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameEditTextLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -75,7 +74,8 @@
             android:hint="@string/insert_name"
             app:errorEnabled="true"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:background="@drawable/rounded_edit_text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -142,13 +142,14 @@
             app:errorEnabled="true"
             android:inputType="textPassword"
             android:ems="10"
+            android:background="@drawable/rounded_edit_text"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.dicoding.gymvision.customview.MyButton
         android:id="@+id/btn_signup"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
@@ -156,6 +157,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+
+    <!-- Add this TextView for Login link -->
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/login_prompt"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal"

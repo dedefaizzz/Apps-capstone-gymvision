@@ -29,24 +29,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Make status bar transparent and extend layout to fullscreen
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.statusBarColor = Color.TRANSPARENT
 
-        // Contoh penggunaan binding untuk menampilkan konten
+        // Observe user session
         viewModel.retrieveUserSession().observe(this) { user ->
             if (!user.isLogin) {
                 navigateToPreWelcome()
             }
         }
 
+        // Initialize bottom navigation and floating action button
         navView = binding.nav
         fabCamera = binding.fabCamera
 
-        // Atur HomeFragment sebagai fragment awal
+        // Set HomeFragment as the default fragment
         if (savedInstanceState == null) {
             replaceFragment(HomeFragment())
         }
 
+        // Handle bottom navigation item selection
         navView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> replaceFragment(HomeFragment())
@@ -55,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        // Handle floating action button click
         fabCamera.setOnClickListener {
             val intent = Intent(this, AnalisActivity::class.java)
             startActivity(intent)
@@ -97,6 +101,4 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.fragment_container, fragment)
         fragmentTransaction.commit()
     }
-
-
 }

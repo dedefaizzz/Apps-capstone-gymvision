@@ -14,10 +14,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.dicoding.gymvision.R
 import com.dicoding.gymvision.adapter.EducationAdapter
-import com.dicoding.gymvision.adapter.ProductAdapter
 import com.dicoding.gymvision.data.model.Education
-import com.dicoding.gymvision.data.model.Product
-import com.dicoding.gymvision.view.activity.DetailEducationActivity
 import com.dicoding.gymvision.view.activity.WelcomeActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -25,6 +22,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var educationAdapter: EducationAdapter
     private val listEducation = ArrayList<Education>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,24 +37,22 @@ class HomeFragment : Fragment() {
             logout()
         }
 
+        // Setup ImageSlider
         val imageSlider = view.findViewById<ImageSlider>(R.id.imageSlider)
         val imageList = ArrayList<SlideModel>()
 
-        imageList.add(SlideModel("https://i.pinimg.com/564x/d1/ef/db/d1efdba923702381cf8229aae885c579.jpg","GymVision"))
-        imageList.add(SlideModel("https://i.pinimg.com/564x/63/24/bb/6324bb0595080157562823c8ab87ea34.jpg","GymVision"))
-        imageList.add(SlideModel("https://i.pinimg.com/564x/04/0a/9f/040a9ff96a0c6490c19cd0753a7a4ea4.jpg","GymVision"))
-        imageList.add(SlideModel("https://i.pinimg.com/564x/c5/e0/a2/c5e0a2ca09cfa0253114eee835f80428.jpg","GymVision"))
+        imageList.add(SlideModel("https://i.pinimg.com/564x/d1/ef/db/d1efdba923702381cf8229aae885c579.jpg", "GymVision"))
+        imageList.add(SlideModel("https://i.pinimg.com/564x/63/24/bb/6324bb0595080157562823c8ab87ea34.jpg", "GymVision"))
+        imageList.add(SlideModel("https://i.pinimg.com/564x/04/0a/9f/040a9ff96a0c6490c19cd0753a7a4ea4.jpg", "GymVision"))
+        imageList.add(SlideModel("https://i.pinimg.com/564x/c5/e0/a2/c5e0a2ca09cfa0253114eee835f80428.jpg", "GymVision"))
 
-        imageSlider.setImageList(imageList,ScaleTypes.FIT)
+        imageSlider.setImageList(imageList, ScaleTypes.FIT)
 
+        // Setup RecyclerView
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewEducation)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         educationAdapter = EducationAdapter(listEducation)
         recyclerView.adapter = educationAdapter
-
-        val adapter = EducationAdapter(listEducation)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = adapter
 
         populateEducationData()
 

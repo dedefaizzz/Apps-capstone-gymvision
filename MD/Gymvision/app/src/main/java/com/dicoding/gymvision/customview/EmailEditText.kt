@@ -7,6 +7,8 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.content.ContextCompat
+import com.dicoding.gymvision.R
 
 class EmailEditText : AppCompatEditText {
     constructor(context: Context) : super(context) {
@@ -25,6 +27,8 @@ class EmailEditText : AppCompatEditText {
         super.onDraw(canvas)
         hint = "Masukkan email"
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
+        // Set the background with rounded corners
+        background = ContextCompat.getDrawable(context, R.drawable.rounded_edit_text)
     }
 
     fun init() {

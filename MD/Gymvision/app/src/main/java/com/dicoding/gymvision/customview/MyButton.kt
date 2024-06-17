@@ -28,12 +28,13 @@ class MyButton : AppCompatButton {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         setTextColor(txtColor)
-        textSize = 12f
+        textSize = 14f
         gravity = Gravity.CENTER
         text = if(isEnabled) resources.getString(R.string.submit) else resources.getString(R.string.not_valid_data)
     }
 
     private fun init() {
         txtColor = ContextCompat.getColor(context, android.R.color.background_light)
+        background = ContextCompat.getDrawable(context, R.drawable.button_background)
     }
 }

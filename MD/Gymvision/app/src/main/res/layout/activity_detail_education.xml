@@ -8,39 +8,44 @@
     android:background="@color/blue_background3"
     tools:context=".view.activity.DetailEducationActivity">
 
-            <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+            <ImageView
+                android:id="@+id/imageViewEdu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:layout_height="319dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_place_holder" />
+        </androidx.cardview.widget.CardView>
 
-                <ImageView
-                    android:id="@+id/imageViewEdu"
-                    android:layout_width="match_parent"
-                    android:layout_height="319dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_place_holder" />
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem Ipsum"
+            android:textSize="28sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/titleTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Lorem Ipsum"
-                    android:textSize="28sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/descriptionTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:text="Lorem ipsum dolor sit amet, "
-                    android:textSize="18sp"
-                    android:textColor="@android:color/white"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="Lorem ipsum dolor sit amet, "
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
 </ScrollView>

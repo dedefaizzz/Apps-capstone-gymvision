@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -38,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
         initViews()
         setupListeners()
         setupUI()
-//        startAnimations()
+        setupRegisterLink()
     }
 
     private fun initViews() {
@@ -77,29 +78,13 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-//    private fun startAnimations() {
-//        val imageAnimator = ObjectAnimator.ofFloat(binding.imageView, View.TRANSLATION_X, -30f, 30f).apply {
-//            duration = 6000
-//            repeatCount = ObjectAnimator.INFINITE
-//            repeatMode = ObjectAnimator.REVERSE
-//        }
-//
-//        val animators = listOf(
-//            ObjectAnimator.ofFloat(binding.tvTittle, View.ALPHA, 1f).setDuration(100),
-//            ObjectAnimator.ofFloat(binding.tvMessage, View.ALPHA, 1f).setDuration(100),
-//            ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(100),
-//            ObjectAnimator.ofFloat(binding.emailEditTextLayout, View.ALPHA, 1f).setDuration(100),
-//            ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(100),
-//            ObjectAnimator.ofFloat(binding.passwordEditTextLayout, View.ALPHA, 1f).setDuration(100),
-//            ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(100)
-//        )
-//
-//        AnimatorSet().apply {
-//            playSequentially(animators)
-//            startDelay = 100
-//        }.start()
-//        imageAnimator.start()
-//    }
+    private fun setupRegisterLink() {
+        val registerTextView: TextView = binding.tvRegister
+        registerTextView.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
     private fun updateLoginButtonState() {
         val isEmailValid = emailField.text.toString().isNotEmpty() && emailField.error == null

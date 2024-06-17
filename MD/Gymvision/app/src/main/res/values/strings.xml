@@ -6,10 +6,10 @@
     <string name="title_welcome_page">Welcome to the app</string>
     <string name="title_signup_page">REGISTER</string>
     <string name="not_valid_data">DATA YANG DIMASUKKAN TIDAK VALID</string>
-    <string name="submit">Submit</string>
+    <string name="submit">Masuk</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="message_login_page">Masukkan dulu datamu ya</string>
+    <string name="message_login_page">Masukkan dulu data</string>
     <string name="title_login_page">LOGIN</string>
     <string name="name">Nama</string>
     <string name="logout">Keluar</string>
@@ -44,6 +44,9 @@
     <string name="camera_x">CameraX</string>
     <string name="result_image">Hasil Gambar</string>
     <string name="recommended">Rekomendasi</string>
+    <string name="register_prompt">Register</string>
+    <string name="login_prompt">Login</string>
+    <string name="back">Back</string>
 
     <!-- String Edukasi -->
     <string-array name="data_name">
@@ -53,48 +56,55 @@
         <item>Deadlift</item>
         <item>Squat</item>
     </string-array>
+
+    <string-array name="video_urls">
+            <item>VIDEO_URL_1</item>
+            <item>VIDEO_URL_2</item>
+            <item>VIDEO_URL_3</item>
+            <!-- Tambahkan URL video lainnya sesuai kebutuhan -->
+    </string-array>
     <string-array name="data_description">
-        <item>Sebagai pemula, lakukan langkah-langkah untuk gerakan dumbbell bench press secara bertahap. Bagi yang sudah berpengalaman, panduan ini mungkin bermanfaat untuk melakukan evaluasi terhadap gerakan latihan.
+        <item>Sebagai pemula, lakukan langkah-langkah untuk gerakan dumbbell bench press secara bertahap. Bagi yang sudah berpengalaman, panduan ini mungkin bermanfaat untuk melakukan evaluasi terhadap gerakan latihan.\n\n
 
-        1. Pertama-tama, Anda harus menguasai gerakan standar terlebih dulu. Ambil posisi berbaring pada bangku tinggi dan mendatar dengan kaki menekuk dan memijak lantai.
-        2. Posisikan kedua tangan menyamping pada masing-masing sisi badan dan pegang tiang pengangkat bench press. Ketika melakukan posisi ini, siku Anda harus dibuat menekuk.
-        3. Sebelum mengangkat beban, kami anjurkan Anda pemanasan terlebih dulu menggunakan tiangnya (berat tiang bench press sekitar 20 kg).Secara perlahan-lahan, angkatlah tiang dan posiskan persis di depan dada, setelah menahan beberapa detik kembalikan lagi tiang pada rak penyangga.
-        4. Sudah cukup yakin ingin memulai gerakan bench press?  Mintalah instruktur yang menemani Anda menambahkan bebanPosisikan tangan pada tiang dengan telapak tangan menghadap depan. Kemudian angkat tiang ke atas melawan gravitasi dan turunkan sedikit demi sedikit dekat dengan dada.
-        5. Lakukan latihan bench press sebanyak 8-12 kali tiap setnya dengan jumlah set maksimal enam. Ketika Anda merasa tubuh sudah kelelahan, berhentilah sejenak untuk istirahat lantas lanjutkan latihan kembali saat sudah siap.
-        6. Waktu istirahat yang banyak direkomendasikan adalah 90-120 detik tiap set. Tapi mengingat setiap orang memiliki kemampuan yang berbeda-beda, Anda bisa mengambil istirahat lebih banyak lagi.
+        1. Pertama-tama, Anda harus menguasai gerakan standar terlebih dulu. Ambil posisi berbaring pada bangku tinggi dan mendatar dengan kaki menekuk dan memijak lantai.\n
+        2. Posisikan kedua tangan menyamping pada masing-masing sisi badan dan pegang tiang pengangkat bench press. Ketika melakukan posisi ini, siku Anda harus dibuat menekuk.\n
+        3. Sebelum mengangkat beban, kami anjurkan Anda pemanasan terlebih dulu menggunakan tiangnya (berat tiang bench press sekitar 20 kg).Secara perlahan-lahan, angkatlah tiang dan posiskan persis di depan dada, setelah menahan beberapa detik kembalikan lagi tiang pada rak penyangga.\n
+        4. Sudah cukup yakin ingin memulai gerakan bench press?  Mintalah instruktur yang menemani Anda menambahkan bebanPosisikan tangan pada tiang dengan telapak tangan menghadap depan. Kemudian angkat tiang ke atas melawan gravitasi dan turunkan sedikit demi sedikit dekat dengan dada.\n
+        5. Lakukan latihan bench press sebanyak 8-12 kali tiap setnya dengan jumlah set maksimal enam. Ketika Anda merasa tubuh sudah kelelahan, berhentilah sejenak untuk istirahat lantas lanjutkan latihan kembali saat sudah siap.\n
+        6. Waktu istirahat yang banyak direkomendasikan adalah 90-120 detik tiap set. Tapi mengingat setiap orang memiliki kemampuan yang berbeda-beda, Anda bisa mengambil istirahat lebih banyak lagi.\n
         </item>
-        <item>Meski terlihat mudah, Anda harus tahu betul cara menggunakan treadmill untuk membantu memaksimalkan latihan. Nah, berikut panduannya.
+        <item>Meski terlihat mudah, Anda harus tahu betul cara menggunakan treadmill untuk membantu memaksimalkan latihan. Nah, berikut panduannya.\n\n
 
-        1. Pelajari tombol pada treadmill. Alat treadmill biasanya dilengkapi dengan berbagai macam tombol untuk mengatur kecepatan dan jarak tempuh. Anda bisa menekan tombol start untuk memulai dan stop untuk berhenti. Selain itu, mesin treadmill modern biasanya telah dilengkapi dengan fitur-fitur yang mendukung performa latihan, seperti indikator jantung dan jumlah kalori yang terbakar.
-        2. Melakukan pemanasan Hal ini penting untuk membantu merilekskan otot dan sendi yang kaku serta menghindari risiko cedera.
-        3. Berdiri dengan posisi tubuh yang lurus dan pandangan ke depan. Lepaskan genggaman tangan Anda dari pegangan treadmill lalu ayunkan tangan seirama dengan langkah kaki Anda.
-        4. Mulai secara perlahan gunakan kecepatan yang paling rendah selama sekitar 5 – 10 menit untuk pemanasan. Setelah tubuh terbiasa, Anda boleh menambah kecepatannya secara perlahan.
+        1. Pelajari tombol pada treadmill. Alat treadmill biasanya dilengkapi dengan berbagai macam tombol untuk mengatur kecepatan dan jarak tempuh. Anda bisa menekan tombol start untuk memulai dan stop untuk berhenti. Selain itu, mesin treadmill modern biasanya telah dilengkapi dengan fitur-fitur yang mendukung performa latihan, seperti indikator jantung dan jumlah kalori yang terbakar.\n
+        2. Melakukan pemanasan Hal ini penting untuk membantu merilekskan otot dan sendi yang kaku serta menghindari risiko cedera.\n
+        3. Berdiri dengan posisi tubuh yang lurus dan pandangan ke depan. Lepaskan genggaman tangan Anda dari pegangan treadmill lalu ayunkan tangan seirama dengan langkah kaki Anda.\n
+        4. Mulai secara perlahan gunakan kecepatan yang paling rendah selama sekitar 5 – 10 menit untuk pemanasan. Setelah tubuh terbiasa, Anda boleh menambah kecepatannya secara perlahan.\n
         5. Lari di treadmill dengan durasi 10 menit
         </item>
-        <item>Pull down lateral adalah latihan gabungan yang melatih seluruh rantai posterior. Ini adalah latihan yang bagus untuk membangun kekuatan, stabilitas, dan mobilitas di sekitar bahu dan punggung. Berikut Teknik melakukan dengan benar
+        <item>Pull down lateral adalah latihan gabungan yang melatih seluruh rantai posterior. Ini adalah latihan yang bagus untuk membangun kekuatan, stabilitas, dan mobilitas di sekitar bahu dan punggung. Berikut Teknik melakukan dengan benar\n\n
 
-        1. Tempatkan resistance band di bagian atas pintu dan pegang ujungnya di masing-masing tangan.
-        2. Tarik ke bawah pada resistance band, tarik tulang belikat Anda ke belakang dan ke bawah dan siku ke arah samping. Kendalikan gerakan kembali ke posisi awal.
-        3. Lakukan gerakan dengan 8 kali repetisi per set. Untuk merasakan otot yang berkontraksi di bagian punggung bagian atas
+        1. Tempatkan resistance band di bagian atas pintu dan pegang ujungnya di masing-masing tangan.\n
+        2. Tarik ke bawah pada resistance band, tarik tulang belikat Anda ke belakang dan ke bawah dan siku ke arah samping. Kendalikan gerakan kembali ke posisi awal.\n
+        3. Lakukan gerakan dengan 8 kali repetisi per set. Untuk merasakan otot yang berkontraksi di bagian punggung bagian atas\n
         </item>
-        <item>Berikut adalah beberapa tahapan deadlift bagi Anda yang masih pemula:
+        <item>Berikut adalah beberapa tahapan deadlift bagi Anda yang masih pemula:\n\n
 
-         1. Bagi pemula, disarankan untuk memulai dari beban terkecil dulu, baru kemudian ditingkatkan jika tubuh sudah beradaptasi dengan keadaan.
-         2. Aturlah posisi berdiri dengan tepat, yaitu tubuh lurus dan bagian kaki dibuka sampai selebar bahu.
-         3. Menggenggam bagian barbel harus disesuaikan dengan postur tubuh, yaitu harus lebih lebar dari posisi bahu dan kaki. Genggamlah dengan tangan menghadap ke bawah, dan lengan lurus seutuhnya.
-         4. Turunkan badan secara perlahan, dengan cara meluruskan paha seperti posisi akan duduk. Tahanlah keadaan itu, kemudian atur punggung tetap lurus dan pendangan menghadap kedepan. Posisi punggung harus rata dan perlahan melengkung, seiring dengan sudut pada dan lutut membentuk sudut siku-siku. Jika punggung Anda masih membungkuk, maka gerakan yang dilakukan masih belum tepat.
-         5. Jika posisi sudah dirasa nyaman, maka mulailah angkat tubuh dengan perlahan, dengan memperhatikan posisi panggul dan punggung yang tetap lurus. Jaga keseimbangan badan dengan menahan barbel selama beberapa waktu. Pada tahapan ini, rasakan dengan saksama penambahan beban yang dirasakan oleh tiap otot yang ada di tubuh.
+         1. Bagi pemula, disarankan untuk memulai dari beban terkecil dulu, baru kemudian ditingkatkan jika tubuh sudah beradaptasi dengan keadaan.\n
+         2. Aturlah posisi berdiri dengan tepat, yaitu tubuh lurus dan bagian kaki dibuka sampai selebar bahu.\n
+         3. Menggenggam bagian barbel harus disesuaikan dengan postur tubuh, yaitu harus lebih lebar dari posisi bahu dan kaki. Genggamlah dengan tangan menghadap ke bawah, dan lengan lurus seutuhnya.\n
+         4. Turunkan badan secara perlahan, dengan cara meluruskan paha seperti posisi akan duduk. Tahanlah keadaan itu, kemudian atur punggung tetap lurus dan pendangan menghadap kedepan. Posisi punggung harus rata dan perlahan melengkung, seiring dengan sudut pada dan lutut membentuk sudut siku-siku. Jika punggung Anda masih membungkuk, maka gerakan yang dilakukan masih belum tepat.\n
+         5. Jika posisi sudah dirasa nyaman, maka mulailah angkat tubuh dengan perlahan, dengan memperhatikan posisi panggul dan punggung yang tetap lurus. Jaga keseimbangan badan dengan menahan barbel selama beberapa waktu. Pada tahapan ini, rasakan dengan saksama penambahan beban yang dirasakan oleh tiap otot yang ada di tubuh.\n
         </item>
-        <item>Melakukan gerakan dengan benar bisa menurunkan risiko cedera atau nyeri pada bagian punggung bawah. Gerakan squat yang benar juga tidak membuat lutut terbebani dan menjadi sakit. Berikut cara melakukan squat yang benar.
+        <item>Melakukan gerakan dengan benar bisa menurunkan risiko cedera atau nyeri pada bagian punggung bawah. Gerakan squat yang benar juga tidak membuat lutut terbebani dan menjadi sakit. Berikut cara melakukan squat yang benar.\n\n
 
-        1. Mulai dengan berdiri tegak dan kaki dibuka selebar bahu
-        2. Pertahankan posisi dada ke arah depan dan otot core dikunci
-        3. Turunkan badan dengan mendorong bagian bokong ke arah bawah seperti akan duduk
-        4. Tetap jaga mata dan dada untuk terus menghadap ke depan
-        5. Cobalah untuk membuat paha sejajar dengan bokong atau bokong yang lebih rendah
-        6. Saat tubuh sedang turun, tangan bisa berada di depan dada atau lurus ke depan untuk menjaga keseimbangan
-        7. Angkat kembali tubuh kembali ke posisi semula
-        8. Ulangi gerakan di atas.
+        1. Mulai dengan berdiri tegak dan kaki dibuka selebar bahu\n
+        2. Pertahankan posisi dada ke arah depan dan otot core dikunci\n
+        3. Turunkan badan dengan mendorong bagian bokong ke arah bawah seperti akan duduk\n
+        4. Tetap jaga mata dan dada untuk terus menghadap ke depan\n
+        5. Cobalah untuk membuat paha sejajar dengan bokong atau bokong yang lebih rendah\n
+        6. Saat tubuh sedang turun, tangan bisa berada di depan dada atau lurus ke depan untuk menjaga keseimbangan\n
+        7. Angkat kembali tubuh kembali ke posisi semula\n
+        8. Ulangi gerakan di atas.\n
         </item>
     </string-array>
     <string-array name="data_photo">
@@ -146,12 +156,12 @@
             - Sebaiknya dibagi menjadi 2-3 kali minum (2 scoop per sekali minum 3 kali sehari, atau 3 scoop per sekali minum 2 kali sehari)\n
         </item>
         <item>
-            ANS Creatine Monohydrate adalah produk creatine dari ANS yang telah diuji secara klinis.
+            ANS Creatine Monohydrate adalah produk creatine dari ANS yang telah diuji secara klinis.\n
             Creatine monohydrate sendiri merupakan kebutuhan bagi setiap orang sebagai asupan bagi otot yang cedera pasca latihan sehingga dapat mempercepat pemulihannya.
-            Creatine juga memberikan phosphocreatine yang bekerja sebagai molekul penyimpan energi selama berolahraga.\N
+            Creatine juga memberikan phosphocreatine yang bekerja sebagai molekul penyimpan energi selama berolahraga.\n
             Oleh karena itu, ketika otot kita kehabisan creatine, sistem energi akan melemah dan otot kita tidak bisa lagi bekerja secara optimal.\n
             Suplemen ini berfungsi untuk meningkatkan tenaga, daya tahan otot, dan stamina sehingga membuat latihan Anda lebih efektif dan tahan lama. Otot Anda juga akan terbentuk bebas dari lemak.\n\n
-            Cara Konsumsi:\N
+            Cara Konsumsi:\n
             - Creatine Loading: 1 sendok (5gr) Creatine saat sarapan, makan siang, dan malam, serta 1 sendok tambahan sebelum tidur selama 4-5 hari untuk membantu mengisi otot Anda dengan creatine.\n
             - Creatine Maintenance: 1 sendok (5gr) Creatine saat makan atau segera setelah latihan dengan protein shake pasca latihan Anda.\n
             - Tips: Minumlah setidaknya delapan gelas air setiap hari saat mengonsumsi creatine. Mengkonsumsi karbohidrat sederhana dengan creatine dapat membantu meningkatkan efektivitas secara keseluruhan.\n

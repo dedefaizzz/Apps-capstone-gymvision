@@ -2,17 +2,17 @@ package com.dicoding.gymvision.view.activity
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
-import com.dicoding.gymvision.R
+import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.gymvision.customview.EmailEditText
 import com.dicoding.gymvision.customview.MyButton
 import com.dicoding.gymvision.customview.PasswordEditText
@@ -26,6 +26,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var emailField: EmailEditText
     private lateinit var passwordField: PasswordEditText
     private lateinit var registerButton: MyButton
+    private lateinit var loginTextView: TextView
     private val viewModel: MainViewModel by viewModels { ViewModelFactory.getInstance(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,12 +43,18 @@ class RegisterActivity : AppCompatActivity() {
         emailField = binding.emailEditText
         passwordField = binding.passwordEditText
         registerButton = binding.btnSignup
+        loginTextView = binding.tvLogin
 
         emailField.addTextChangedListener(createTextWatcher())
         passwordField.addTextChangedListener(createTextWatcher())
 
         registerButton.setOnClickListener {
             if (registerButton.isEnabled) performRegistration()
+        }
+
+        loginTextView.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 
