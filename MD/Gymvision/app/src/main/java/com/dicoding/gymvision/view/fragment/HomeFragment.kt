@@ -41,10 +41,11 @@ class HomeFragment : Fragment() {
         val imageSlider = view.findViewById<ImageSlider>(R.id.imageSlider)
         val imageList = ArrayList<SlideModel>()
 
-        imageList.add(SlideModel("https://i.pinimg.com/564x/d1/ef/db/d1efdba923702381cf8229aae885c579.jpg", "GymVision"))
-        imageList.add(SlideModel("https://i.pinimg.com/564x/63/24/bb/6324bb0595080157562823c8ab87ea34.jpg", "GymVision"))
-        imageList.add(SlideModel("https://i.pinimg.com/564x/04/0a/9f/040a9ff96a0c6490c19cd0753a7a4ea4.jpg", "GymVision"))
-        imageList.add(SlideModel("https://i.pinimg.com/564x/c5/e0/a2/c5e0a2ca09cfa0253114eee835f80428.jpg", "GymVision"))
+        // Add images from drawable without title
+        imageList.add(SlideModel(R.drawable.image_3))
+        imageList.add(SlideModel(R.drawable.image_2))
+        imageList.add(SlideModel(R.drawable.image_1))
+        imageList.add(SlideModel(R.drawable.image_4))
 
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
 
@@ -88,3 +89,4 @@ class HomeFragment : Fragment() {
         startActivity(intent)
     }
 }
+

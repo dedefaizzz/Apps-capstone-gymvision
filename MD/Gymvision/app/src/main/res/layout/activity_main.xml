@@ -20,10 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/blue_background3"
             app:fabCradleRoundedCornerRadius="10dp"
             app:fabCradleVerticalOffset="10dp"
-            app:fabAlignmentMode="center"/>
+            app:fabAlignmentMode="center"
+            app:tint="@null"/>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav"
@@ -31,11 +32,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="@drawable/transparent"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
             app:layout_anchor="@+id/bottom_app_bar"
             app:layout_anchorGravity="center"
             app:menu="@menu/menu"
-            android:paddingStart="40dp"
-            android:paddingEnd="40dp"/>
+            app:itemIconTint="@color/nav_item_color_white"
+            app:itemTextColor="@color/nav_item_color_white"
+            app:tint="@null"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_camera"
