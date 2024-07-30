@@ -35,6 +35,7 @@ UI aplikasi
 <br>
 ![WhatsApp Image 2024-06-20 at 11 08 03 (2)](https://github.com/user-attachments/assets/067581ab-7205-4c5d-8764-e39bfe531432)
 <br>
+<br>
 **Demo Aplikasi**
 <br>
-Uploading GymVision Demo App BG Music Compress.mp4…
+https://github.com/user-attachments/assets/32e4d19c-5690-4694-8d43-58d990127001
